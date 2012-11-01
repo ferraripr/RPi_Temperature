@@ -1,0 +1,1 @@
+C:\Users\Administrator\Documents\Projects\RPi_Temperature_\obj\x86\Debug\ResolveAssemblyReference.cache
