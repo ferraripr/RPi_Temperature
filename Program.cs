@@ -5,7 +5,7 @@ using System.Text;
 using RaspberryPiDotNet;
 using System.Threading;
 
-// Original author: Mikey Sklar - https://gist.github.com/3151375
+// Original author: Mikey Sklar - git://gist.github.com/3249416.git
 // Adafruit article: https://raw.github.com/gist/3249416/7689f68f3ddbb74aceecda23e395c729668bd520/adafruit-cosm-temp.py
 // Ported from python and modified by: Gilberto Garcia <ferraripr@gmail.com>; twitter: @ferraripr
 namespace RPi_Temperature
