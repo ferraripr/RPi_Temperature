@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Text;
 //Reference available at: https://github.com/cypherkey/RaspberryPi.Net
@@ -16,13 +16,13 @@ namespace RPi_Temperature
         {
 			//# set up the Serial Peripheral Interface(SPI) interface pins
             //# SPI port on the ADC to the Cobbler
-			//clock pin
+	    //clock pin
             GPIOMem SPICLK = new GPIOMem(GPIO.GPIOPins.GPIO18, GPIO.DirectionEnum.OUT);
-			//SPI Master Output, Slave Input (MOSI)
-			GPIOMem SPIMISO = new GPIOMem(GPIO.GPIOPins.GPIO23, GPIO.DirectionEnum.IN);
-			//SPI Master Input, Slave Output (MISO)
+	    //SPI Master Output, Slave Input (MOSI)
+	    GPIOMem SPIMISO = new GPIOMem(GPIO.GPIOPins.GPIO23, GPIO.DirectionEnum.IN);
+	    //SPI Master Input, Slave Output (MISO)
             GPIOMem SPIMOSI = new GPIOMem(GPIO.GPIOPins.GPIO24, GPIO.DirectionEnum.OUT);
-			//SPI Chip Select
+	    //SPI Chip Select
             GPIOMem SPICS = new GPIOMem(GPIO.GPIOPins.GPIO25, GPIO.DirectionEnum.OUT);
 
             // temperature sensor connected to channel 0 of mcp3008
@@ -31,7 +31,7 @@ namespace RPi_Temperature
 
             while (true)
             {
-				DateTime now = DateTime.Now;
+		DateTime now = DateTime.Now;
                 MCP3008 MCP3008 = new MCP3008(adcnum, SPICLK, SPIMOSI, SPIMISO, SPICS);
                 // read the analog pin (temperature sensor LM35)
                 read_adc0 = MCP3008.AnalogToDigital;
@@ -48,11 +48,11 @@ namespace RPi_Temperature
                 Console.WriteLine("tempC: " + (float)temp_C);
                 Console.WriteLine("tempF: " + (float)temp_F);
                 Console.WriteLine("volts: " + (float)volts);
-				//The following line makes the trick on Raspberry Pi for displaying DateTime.Now
-				//equivalent.
-				Console.WriteLine("Date time stamp: {0}/{1}/{2} {3}:{4}:{5}",now.Month,now.Day,now.Year,
-				                  now.Hour,now.Minute,now.Second);
-				System.Console.WriteLine("\n");
+		//The following line makes the trick on Raspberry Pi for displaying DateTime.Now
+		//equivalent.
+		Console.WriteLine("Date time stamp: {0}/{1}/{2} {3}:{4}:{5}",now.Month,now.Day,now.Year,
+				now.Hour,now.Minute,now.Second);
+		System.Console.WriteLine("\n");
 #endif
                 Thread.Sleep(3000);
             }
